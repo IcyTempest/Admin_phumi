@@ -29,6 +29,7 @@ Route::post('/logout', [AdminController::class, 'logout'])->name('admin.logout')
 
 
 Route::get('/register', [AdminController::class, 'register'])->name('admin.register');
+Route::get('/search', [AdminController::class, 'search'])->name('admin.search');
 Route::post('/register/authRegister', [AdminController::class, 'authRegister'])->name('admin.authRegister');
 
 Route::get('/following/{id}', [AdminController::class, 'following'])->name('admin.following')->middleware("AdminAuth");

@@ -6,7 +6,7 @@ use App\Models\Admin;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -15,9 +15,9 @@ class AdminController extends Controller
         $user = DB::table('users')->get();
         return view("Admin.home",["user"=>$user]);
     }
-    public function search($search_data)
+    public function search(Request $request)
     {
-        $datas = DB::table('users')->where('username','LIKE','%'.$search_data.'%');
+        $datas = DB::table('users')->where('username','LIKE','%'.$request->search_data.'%')->get();
         return view("Admin.home",["user"=>$datas]);
     }
     public function report()

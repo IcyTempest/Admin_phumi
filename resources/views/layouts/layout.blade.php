@@ -46,9 +46,9 @@
                             </form>
                             
                         </ul>
-                        <form action="" method="GET" class="d-flex" style="flex:1; margin-left:10px;">
+                        <form action="{{ route('admin.search') }}" method="GET" class="d-flex" style="flex:1; margin-left:10px;">
                             <input class="form-control me-2" type="search" placeholder="Search For User"
-                                aria-label="Search For User">
+                                aria-label="Search For User" name="search_data">
                             <button class="btn btn-outline-light" type="submit">Search</button>
                         </form>
                     </div>

@@ -31,12 +31,12 @@
                         <legend class="display-5 text-center ">Register</legend>
                         <div class="form-group mb-3">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" name="username" id="username">
+                            <input type="text" class="form-control" name="username" id="username"  value="{{ old("username") }}">
                         </div>
                         <p style="color: red;">@error('username'){{ $message }}</p> @enderror
                         <div class="form-group mb-3">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control "    name="password" id="password">
+                            <input type="password" class="form-control " name="password" id="password">
                             <p style="color: red;">@error('password'){{ $message }}</p> @enderror
                         </div>
                         <div class="form-group mb-3">

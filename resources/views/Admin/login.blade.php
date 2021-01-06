@@ -39,11 +39,13 @@
                         <legend class="display-5 text-center ">Login</legend>
                         <div class="form-group mb-3">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" name="username" id="username">
+                            <input type="text" class="form-control" name="username" id="username"  value="{{ old("username") }}">
+                            <p style="color: red;">@error('username'){{ $message }}</p> @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label for="password">password</label>
                             <input type="password" class="form-control " name="password" id="password">
+                            <p style="color: red;">@error('password'){{ $message }}</p> @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label for="company_code">Company Code</label>
