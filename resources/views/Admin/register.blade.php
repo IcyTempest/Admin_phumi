@@ -56,11 +56,7 @@
                     <hr>
                     <span>
                         Already have account?
-                        <a href="{{ route('admin.login') }}" class="text-decoration-none">Login here</a>
-                       <p>{{ route('admin.authRegister') }}</p>
-                        @foreach($data as $i)
-                            <p>{{ $i->username }}</p>
-                        @endforeach                      
+                        <a href="{{ route('admin.login') }}" class="text-decoration-none">Login here</a>                  
                     </span>
                 </div>
             </div>

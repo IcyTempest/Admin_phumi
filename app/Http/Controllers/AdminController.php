@@ -129,9 +129,8 @@ class AdminController extends Controller
         return back()->with("fail", "Username/Company Code does not exist!");
     }
     function register(){
-        $data = DB::table('users')->select('username')->get();
 
-        return view("admin.register",["data"=>$data]);
+        return view("admin.register");
     }
     function authRegister()
     {
