@@ -31,7 +31,7 @@
                         <legend class="display-5 text-center ">Register</legend>
                         <div class="form-group mb-3">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" name="username" id="username"  value="{{ old("username") }}">
+                            <input type="text" class="form-control" name="username" id="username"  value="{{ old('username') }}">
                         </div>
                         <p style="color: red;">@error('username'){{ $message }}</p> @enderror
                         <div class="form-group mb-3">

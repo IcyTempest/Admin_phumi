@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    
     public function index()
     {
         $user = DB::table('users')->get();
@@ -124,9 +125,9 @@ class AdminController extends Controller
                 session()->put('admin', $Admin->id);
                 return redirect(route('admin.index'))->with('success', "Successfully Login!");
             }
-            return back()->with("fail", "Incorrect password or code!");
+            return back()->with("fail", "Incorrect password or code!")->withInput();
         }
-        return back()->with("fail", "Username/Company Code does not exist!");
+        return back()->with("fail", "Username/Company Code does not exist!")->withInput();
     }
     function register(){
 
@@ -141,14 +142,14 @@ class AdminController extends Controller
             'company_code' => 'required'
         ]);
 
-        if($data['company_code'] === '189259123')
+        if($data['company_code'] === "189259123")
         { 
             $data['password'] = Hash::make($data['password']);
             unset($data['confirm_password']);
             unset($data['company_code']);
             Admin::create($data);
-            return redirect(route('admin.login'))->with('success',"Successfully Register!");
+            return redirect(route('admin.login'))->with('success',"Successfully Register!")->withInput();
         }
-        return redirect()->back()->with('fail',"Register failed! Please checked again");
+        return redirect()->back()->with('fail',"Register failed! Please checked again")->withInput();
     }
 }
