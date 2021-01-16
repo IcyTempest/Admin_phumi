@@ -85,9 +85,9 @@ class AdminController extends Controller
             $data = request()->validate([
                 'password' => 'required|min:8'
             ]);
-            $data = Hash::make($data['password']);
-            $user->update(['password'=>$data['password']]);
-            return redirect()->back()->with('success','succesfully change');
+            $rise = Hash::make($data['password']);
+            $user->update(['password'=>$rise]);
+            return back()->with('success','succesfully change');
         }
         return redirect()->back()->with('fail','Fail to change, something went wrong');
     }
